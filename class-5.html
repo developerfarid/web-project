@@ -1,0 +1,162 @@
+<!-- 01. form section start -->
+<!-- 01. form section start -->
+<!-- 01. form section start -->
+<!-- 01. form section start -->
+<!-- 01. form section start -->
+<!-- 01. form section start -->
+<!-- 01. form section start -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box !important;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .form-left,
+        .form-right {
+            width: 50%;
+            height: 100%;
+        }
+
+        .form-left {
+            height: 100%;
+        }
+
+        .form-right {
+            background-color: black;
+            color: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px, rgba(0, 0, 0, 1) 0px 30px 60px -30px;
+        }
+
+        .form-left img {
+            width: 100%;
+        }
+
+        .form-right h2 {
+            font-size: 42px;
+            text-align: center;
+        }
+
+        input,
+        label {
+            display: block;
+            width: 100%;
+        }
+
+        input {
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            margin-top: 8px;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        input:focus {
+            border: 1px solid red !important;
+            outline: 1px solid red;
+        }
+
+        input[type=submit] {
+            background: green;
+            cursor: pointer;
+            transition: all 1s ease-in-out;
+
+        }
+
+        input[type=submit]:hover {
+            background: navy;
+        }
+
+        /* input[type=number]::placeholder{
+            color: red;
+        }
+        input:not([type=number])::placeholder{
+            color: red;
+        } */
+        ::placeholder {
+            color: red;
+        }
+
+        label {
+            font-size: 18px;
+
+        }
+
+        @media screen and (max-width:800px) {
+            .row {
+                display: block;
+            }
+
+            .form-left,
+            .form-right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 01. form section start -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="form-left">
+                    <img src="https://img.freepik.com/free-vector/forms-concept-illustration_114360-4797.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703030400&semt=sph"
+                        alt="">
+                </div>
+                <div class="form-right">
+
+                    <h2>Login Form</h2>
+                    <form>
+                        <label for="fName">First Name</label>
+                        <input type="text" name="fName" id="fName" placeholder="Your First Name">
+                        <label for="lName">Last Name</label>
+                        <input type="text" name="lName" id="lName" placeholder="Your Last Name">
+                        <label for="age">Age</label>
+                        <input type="number" name="age" id="age" placeholder="Your Age">
+                        <label for="phone">Age</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Your Phone Number">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="********">
+                        <input type="submit" value="Submit">
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <form>
+
+    </form>
+
+</body>
+
+</html>
