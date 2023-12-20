@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .parent{
+        .parent {}
 
-        }
-        .child{
+        .child {
             /* position: relative; */
 
         }
-        .box{
+
+        .box {
             width: 500px;
             height: 500px;
             background-color: black;
-            margin-left: auto; 
+            margin-left: auto;
             margin: auto;
             /* position: absolute;
             left: 100px;
             top: 500px; */
 
-        } 
-        .box{
-            position: -webkit-sticky;
-            position: sticky;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
         }
-        .ok{
+
+        .box {
+            position: sticky;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ok {
             height: 100vh;
             width: 100vw;
 
         }
     </style>
 </head>
+
 <body>
     <div class="ok">
 
@@ -52,4 +55,5 @@ transform: translate(-50%,-50%);
 
     </div>
 </body>
+
 </html>
