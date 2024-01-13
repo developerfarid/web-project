@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/helvetica-neue-5"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #252734;
+        font-family: "Helvetica Neue", sans-serif;
+      }
+      .container {
+        max-width: 1170px;
+        margin: auto;
+      }
+      .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 0;
+      }
+      nav ul {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #7f8792;
+        font-size: 18px;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+      }
+      nav ul li a:hover {
+        color: white;
+      }
+      .header-btn {
+        background-color: transparent;
+        padding: 20px 50px;
+        border-radius: 38px;
+        border: 1px solid #3b3d49;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+      }
+      .header-btn:hover {
+        background-color: #2e303d;
+        border: 1px solid #2e303d;
+      }
+      .next-level-menu {
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(50px);
+      }
+      .show-menu {
+        position: relative;
+      }
+      .show-menu:hover .next-level-menu {
+        opacity: 100;
+        transform: translateY(0px);
+      }
+      .next-level-menu li a {
+        padding: 10px;
+        width: 150px;
+        background-color: beige;
+        display: block;
+      }
+      /* project css */
+      .project {
+        display: flex;
+        flex-direction: column;
+        min-height: 500px;
+        align-items: center;
+        justify-content: center;
+      }
+      .project h2 {
+        font-size: 90px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: "Cormorant Garamond", serif;
+      }
+      .project ul {
+        display: inline-block;
+        background-color: #2a2c39;
+        list-style: none;
+        padding: 15px 25px;
+        border-radius: 32px;
+      }
+      .project ul li {
+        display: inline-block;
+      }
+      .project ul li a {
+        color: #858792;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 0 10px;
+        color: #858792;
+        position: relative;
+      }
+      .project ul li a.active::before,
+      .project ul li a.active::after {
+        position: absolute;
+        left: -2px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: white;
+        content: "";
+      }
+      .project ul li a.active::after {
+        position: absolute;
+        left: 2px;
+        top: 0px;
+        width: 1px;
+        height: 100%;
+        background-color: white;
+        content: "";
+      }
+      .project ul li .active {
+        color: white;
+        padding-left: 20px;
+      }
+      header {
+        position: sticky !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      /* project css */
+      .project-section {
+        background-color: #2a2c39;
+        padding: 160px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-flex">
+          <div class="logo">
+            <img
+              src="https://htmldemo.net/lendex/lendex/assets/images/logo/logo.png"
+              alt=""
+            />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Service</a></li>
+              <li class="show-menu">
+                <a href="">Contact </a>
+                <ul class="next-level-menu">
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Home</a></li>
+                </ul>
+              </li>
+              <li><a href="">Shop</a></li>
+            </ul>
+          </nav>
+          <button class="header-btn">
+            Hire Me <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="project">
+          <h2>Projects</h2>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a class="active" href="">Project</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="project-section">
+      <div class="container">
+        <div class="project-tab">
+          <button>All</button>
+          <button>Website</button>
+          <button>Design</button>
+        </div>
+        <div class="project-flex-wrap">
+          <div>
+            <div class="image-box">
+              <img src="" alt="" />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
