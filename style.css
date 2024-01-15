@@ -1,0 +1,73 @@
+:root {
+    --blue: #1e90ff;
+    --white: --blue;
+    --yellow:#77777777;
+    
+  }
+          h1{
+              color: var(--white);
+          }
+  
+          h1{
+              font-size: 60px;
+          }
+          .box{
+              display: flex;
+              gap:10px;
+              flex-wrap: wrap;
+          }
+          .child{
+              width: 23%;
+              height: 200px;
+              background: green;
+          }
+  @media screen and (max-width:1024px) {
+      body{
+          background-color: red;
+      }
+      h1{
+  font-size: 24px;
+  
+      }
+  }        
+  @media screen and (max-width:992px) {
+      body{
+          background-color: red;
+      }
+      .child{
+              width: 32%;
+              height: 400px;
+          }
+      h1{
+  font-size: 24px;
+  
+      }
+  }        
+  @media screen and (max-width:768px) {
+      body{
+          background-color: red;
+      }
+      .child{
+              width: 48%;
+              height: 200px;
+          }
+      h1{
+  font-size: 24px;
+  
+      }
+  }        
+  @media screen and (max-width:576px) {
+      body{
+          background-color: red;
+      }
+      .child{
+              width: 98%;
+              height: 300px;
+          }
+      h1{
+  font-size: 24px;
+  
+      }
+  }    
+  
+  

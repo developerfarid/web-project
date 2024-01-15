@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        background-color: black;
+        color: white;
+        font-size: 22px;
+        padding: 20px;
+      }
+      .header-left span {
+        padding: 20px;
+        margin: auto;
+        transition: all 0.3 ease-in-out;
+      }
+      .header-left span:hover {
+        background-color: burlywood;
+        cursor: pointer;
+      }
+
+      .images {
+        display: flex;
+        position: relative;
+        padding: 20px;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        align-items: end;
+        justify-content: center;
+        animation-name: new;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        background-position: center;
+        background-size: cover;
+      }
+      .images {
+        /* animation-timing-function: ease-in-out;*/
+      }
+      @keyframes new {
+        0% {
+          background-image: url(https://www.w3schools.com/w3images/la.jpg);
+        }
+        50% {
+          background-image: url(https://www.w3schools.com/w3images/chicago.jpg);
+        }
+        100% {
+          background-image: url(https://www.w3schools.com/w3images/la.jpg);
+        }
+      }
+      .images img {
+        width: 100%;
+      }
+      .image-header {
+        position: absolute;
+      }
+      .data {
+        margin: auto;
+        width: 60%;
+        padding: 60px;
+        font-size: 24px;
+        text-align: center;
+      }
+      .data h1 {
+        font-size: 38px;
+      }
+      .image0 {
+        display: flex;
+        justify-content: space-between;
+
+        margin: auto;
+        padding: 60px;
+        width: 60%;
+        text-align: center;
+      }
+      .imgage1 {
+        width: 32%;
+      }
+      .main {
+        background-color: black;
+        color: white;
+        margin: auto;
+        padding: 20px;
+      }
+      .your {
+        text-align: center;
+        font-size: 24px;
+      }
+      .your h1 {
+        font-size: 30px;
+      }
+      .places {
+        display: flex;
+        width: 60%;
+        padding: 30px;
+        margin: auto;
+        gap: 20px;
+        justify-content: center;
+      }
+      .place {
+        background-color: white;
+        padding: 40px;
+        color: black;
+        font-size: 24px;
+      }
+      .main button {
+        padding: 20px;
+        color: white;
+        background-color: black;
+        font-size: 22px;
+      }
+      .main button:hover {
+        background-color: blue;
+        cursor: pointer;
+      }
+      .container3 {
+        margin: auto;
+        padding: 20px;
+      }
+      .contect {
+        text-align: center;
+        font-size: 23px;
+        margin: auto;
+        padding: 20px;
+      }
+      .contect h1 {
+        font-size: 50px;
+      }
+      .right-left {
+        display: flex;
+        gap: 30px;
+        width: 60%;
+        justify-content: center;
+        margin: auto;
+        padding: 40px;
+        font-size: 28px;
+      }
+      .from-right button {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        margin: auto;
+        font-size: 24px;
+        border-radius: 8px;
+      }
+      .contect-left {
+        width: 48%;
+        padding: 30px;
+        margin: auto;
+      }
+      .from-right {
+        width: 48%;
+        font-size: 28px;
+        padding: 30px;
+        margin: auto;
+      }
+      .from-right form {
+        width: 100%;
+
+        font-size: 24px;
+      }
+      .footer img {
+        width: 100%;
+        padding: 20px;
+      }
+      input {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!--header section-->
+    <section>
+      <div class="container">
+        <div class="header-left">
+          <span>Home</span>
+          <span>Band</span>
+          <span>Tour</span>
+          <span>contact</span>
+          <span>More</span>
+        </div>
+      </div>
+    </section>
+    <!--body section-->
+    <section>
+      <div class="container1">
+        <div class="images">
+          <!-- <img src="https://www.w3schools.com/w3images/la.jpg" alt="" /> -->
+
+          <div class="image-header">
+            <h1>New York</h1>
+            <p>The atmosphere in New York is lorem ipsum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container1">
+        <div class="data">
+          <h1>THE BAND</h1>
+          <h4>We love music</h4>
+          <p>
+            We have created a fictional band website. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+        <div class="image0">
+          <div class="image1">
+            <h2>Name</h2>
+            <img
+              src="https://www.w3schools.com/w3images/bandmember.jpg"
+              alt=""
+            />
+          </div>
+          <div class="image1">
+            <h2>Name</h2>
+            <img
+              src="https://www.w3schools.com/w3images/bandmember.jpg"
+              alt=""
+            />
+          </div>
+          <div class="image1">
+            <h2>Name</h2>
+            <img
+              src="https://www.w3schools.com/w3images/bandmember.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container1">
+        <div class="main">
+          <div class="your">
+            <h1>TOUR DATES</h1>
+            <p>Remember to book your tickets!</p>
+          </div>
+          <div class="places">
+            <div class="place">
+              <img
+                src="https://www.w3schools.com/w3images/newyork.jpg"
+                alt=""
+              />
+              <p>Fri 27 Nov 2016</p>
+              <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+              <button>buy ticktes</button>
+            </div>
+            <div class="place">
+              <img src="https://www.w3schools.com/w3images/paris.jpg" alt="" />
+              <p>Fri 27 Nov 2016</p>
+              <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+              <button>buy ticktes</button>
+            </div>
+            <div class="place">
+              <img
+                src="https://www.w3schools.com/w3images/sanfran.jpg"
+                alt=""
+              />
+              <p>Fri 27 Nov 2016</p>
+              <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+              <button>buy tickets</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container3">
+        <div class="contect">
+          <h1>CONTACT</h1>
+          <p>Fan? Drop a note!</p>
+        </div>
+        <div class="right-left">
+          <div class="contect-left">
+            <li>loction....</li>
+            <li>phone:....</li>
+            <li>Email:.....</li>
+          </div>
+          <div class="from-right">
+            <form>
+              <input type="text" name="Name" id="" placeholder="name" />
+              <input type="email" name="Email" id="" placeholder="email" />
+              <textarea name="Messages" id="" cols="30" rows="10"></textarea>
+            </form>
+            <button>send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container1">
+        <div class="footer">
+          <img src="https://www.w3schools.com/w3images/map.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

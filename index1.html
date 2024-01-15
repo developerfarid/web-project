@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --black: #ffffff;
+        --navyblue: #00ffbf;
+        --white: #000000;
+      }
+      .container-fluid {
+        max-width: 100%;
+      }
+      .about-wrapper {
+        display: flex;
+      }
+      .navber-left,
+      .about-info-right {
+        width: 50%;
+        padding: 100px 20px;
+        text-align: center;
+      }
+      .navber-left {
+        background-color: var(--black);
+        flex-direction: column;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .about-info-right {
+        background-color: var(--navyblue);
+      }
+      .navber-left h2 {
+        font-size: 45px;
+        color: var(--white);
+      }
+      nav {
+        margin-top: 40px;
+        width: 100%;
+      }
+      nav ul li {
+        margin: 10px 0;
+        list-style: none;
+      }
+      nav ul li a {
+        font-size: 18px;
+        text-decoration: none;
+        padding: 20px;
+        color: var(--white);
+        transition: all ease-in-out 0.3s;
+        display: block;
+      }
+      nav ul li a:hover {
+        background-color: var(--white);
+        color: var(--black);
+      }
+      .about-info-right h3 {
+        font-size: 45px;
+        color: var(--white);
+      }
+      .about-info-right img {
+        border-radius: 50%;
+        margin: 30px 0;
+      }
+      .about-info-right p {
+        font-size: 20px;
+        padding: 0 50px;
+        text-align: left;
+        color: var(--white);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container-fluid">
+        <div class="about-wrapper">
+          <div class="navber-left">
+            <h2>Logo</h2>
+            <nav>
+              <ul>
+                <li><a href="http://">Home</a></li>
+                <li><a href="http://">About</a></li>
+                <li><a href="http://">Service</a></li>
+                <li><a href="http://">Contact</a></li>
+                <li><a href="http://">More</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="about-info-right">
+            <h3>About Me</h3>
+            <img src="https://www.w3schools.com/w3images/avatar3.png" alt="" />
+            <p>
+              Lorem ipusm sed vitae justo condimentum, porta lectus vitae,
+              ultricies congue gravida diam non fringilla. <br /><br />
+
+              Lorem ipusm sed vitae justo condimentum, porta lectus vitae,
+              ultricies congue gravida diam non fringilla.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        /* padding: 120px 0; */
+        position: relative;
+      }
+      section::before {
+        position: absolute;
+        /* left: 50%; */
+        bottom: 0%;
+        content: "";
+        background-color: red;
+        width: 100%;
+        height: 50%;
+        z-index: -1;
+        /* transform: translate(-50%, -50%); */
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+      img {
+        max-width: 100%;
+        padding: 120px 0;
+        transform: translateY(20px);
+        transition: all ease-in-out 0.3s;
+      }
+      img:hover {
+        /* transform: translateY(0px) scale(1.2); */
+      }
+      span {
+        display: block;
+        width: 50%;
+        transform: scaleX(0);
+        height: 2px;
+        background-color: brown;
+        transition: all ease-in-out 0.3s;
+        transform-origin: center;
+      }
+      .col-12 {
+      }
+      .col-12:hover span {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img
+              src="https://duruthemes.com/demo/html/harbour/img/yachts/01.jpg"
+              alt=""
+            />
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
