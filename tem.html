@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/helvetica-neue-5"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #252734;
+        font-family: "Helvetica Neue", sans-serif;
+      }
+      .container {
+        max-width: 1170px;
+        margin: auto;
+      }
+      .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 0;
+      }
+      nav ul {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #7f8792;
+        font-size: 18px;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+      }
+      nav ul li a:hover {
+        color: white;
+      }
+      .header-btn {
+        background-color: transparent;
+        padding: 20px 50px;
+        border-radius: 38px;
+        border: 1px solid #3b3d49;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+      }
+      .header-btn:hover {
+        background-color: #2e303d;
+        border: 1px solid #2e303d;
+      }
+      .next-level-menu {
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(50px);
+      }
+      .show-menu {
+        position: relative;
+      }
+      .show-menu:hover .next-level-menu {
+        opacity: 100;
+        transform: translateY(0px);
+      }
+      .next-level-menu li a {
+        padding: 10px;
+        width: 150px;
+        background-color: beige;
+        display: block;
+      }
+      /* project css */
+      .project {
+        display: flex;
+        flex-direction: column;
+        min-height: 500px;
+        align-items: center;
+        justify-content: center;
+      }
+      .project h2 {
+        font-size: 90px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: "Cormorant Garamond", serif;
+      }
+      .project ul {
+        display: inline-block;
+        background-color: #2a2c39;
+        list-style: none;
+        padding: 15px 25px;
+        border-radius: 32px;
+      }
+      .project ul li {
+        display: inline-block;
+      }
+      .project ul li a {
+        color: #858792;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 0 10px;
+        color: #858792;
+        position: relative;
+      }
+      .project ul li a.active::before,
+      .project ul li a.active::after {
+        position: absolute;
+        left: -2px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: white;
+        content: "";
+      }
+      .project ul li a.active::after {
+        position: absolute;
+        left: 2px;
+        top: 0px;
+        width: 1px;
+        height: 100%;
+        background-color: white;
+        content: "";
+      }
+      .project ul li .active {
+        color: white;
+        padding-left: 20px;
+      }
+      header {
+        position: sticky !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000000000000000000000000000000000000000000000000;
+        background-color: #2a2c39;
+      }
+      /* project css */
+      .project-section {
+        background-color: #2a2c39;
+        padding: 160px 0;
+      }
+      .project-tab {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+      }
+      .project-tab button {
+        background-color: transparent;
+        padding: 20px 50px;
+        border-radius: 38px;
+        border: 1px solid #3b3d49;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      .project-tab button:hover {
+        background-color: #2e303d;
+        border: 1px solid #2e303d;
+      }
+      .project-flex-wrap {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 50px;
+        flex-wrap: wrap;
+      }
+      .project-wrapper {
+        width: 48%;
+        margin-top: 50px;
+      }
+
+      .image-box {
+        height: 500px;
+        overflow: hidden;
+        padding: 80px;
+        background-color: #252734;
+        position: relative;
+        z-index: 1 !important;
+      }
+      .image-box::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: url("https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg");
+        transform: rotate(45deg);
+        z-index: -1 !important;
+        opacity: 0.1;
+      }
+      .image-box img {
+        max-width: 100%;
+      }
+      .content {
+        margin-top: 30px;
+      }
+      .content h2 a {
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: 400;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+      }
+      .content p {
+        color: #ffffff;
+        font-size: 18px;
+        margin-top: 24px;
+      }
+      .form-section {
+        padding: 120px 0;
+        border-bottom: 1px solid #3b3d49;
+      }
+      .form-content p,
+      .form-content h2 {
+        color: white;
+        text-align: center;
+      }
+      .form-content h2 {
+        font-size: 70px;
+        font-weight: 400;
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .form-content p {
+        font-size: 18px;
+      }
+      .form-content form {
+        display: flex;
+        gap: 24px;
+        width: 75%;
+        margin: auto;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .form-content form input {
+        width: 100%;
+        background-color: transparent;
+        padding: 20px 50px;
+        border-radius: 38px;
+        border: 1px solid #3b3d49;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+      }
+      .main-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 100px;
+      }
+      .icon-wrapper {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .icon-box {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #3b3d49;
+        cursor: pointer;
+      }
+      .icon-wrapper a {
+        color: white;
+        font-size: 28px;
+        text-decoration: none;
+      }
+      .icon-box i {
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+      .icon-box:hover {
+        background-color: white;
+      }
+      .icon-box:hover i {
+        color: black;
+      }
+      .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 0;
+      }
+      .footer-wrap p {
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-flex">
+          <div class="logo">
+            <img
+              src="https://htmldemo.net/lendex/lendex/assets/images/logo/logo.png"
+              alt=""
+            />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Service</a></li>
+              <li class="show-menu">
+                <a href="">Contact </a>
+                <ul class="next-level-menu">
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Home</a></li>
+                </ul>
+              </li>
+              <li><a href="">Shop</a></li>
+            </ul>
+          </nav>
+          <button class="header-btn">
+            Hire Me <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="project">
+          <h2>Projects</h2>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a class="active" href="">Project</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="project-section">
+      <div class="container">
+        <div class="project-tab">
+          <button>All</button>
+          <button>Website</button>
+          <button>Design</button>
+        </div>
+        <div class="project-flex-wrap">
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+          <div class="project-wrapper">
+            <div class="image-box">
+              <img
+                src="https://htmldemo.net/lendex/lendex/assets/images/project/project-slider-img-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h2><a href="">Givest - Non Profit PSD Template</a></h2>
+              <p>Chairty Fund Rising Non Profit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="form-section">
+      <div class="container">
+        <div class="form-content">
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <h2>Subscribe For Newsletter</h2>
+          <form action="">
+            <input type="email" name="" id="" placeholder="Enter Your Email" />
+            <button class="header-btn" type="submit">Submit</button>
+          </form>
+
+          <div class="main-wrapper">
+            <div class="icon-wrapper">
+              <div class="icon-box">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <a href="tel:+01629094984">01629094984</a>
+            </div>
+            <div class="icon-wrapper">
+              <div class="icon-box">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <a href="mailto:pustfarid333@gmail.com">pustfarid333@gmail.com</a>
+            </div>
+            <div class="icon-wrapper">
+              <div class="icon-box">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="icon-box"><i class="fa-brands fa-dribbble"></i></div>
+              <div class="icon-box"><i class="fa-brands fa-linkedin"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-wrap">
+          <div>
+            <p>© 2021 Lendex Made with by HasThemes</p>
+          </div>
+          <div>
+            <img
+              src="https://htmldemo.net/lendex/lendex/assets/images/logo/logo.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
