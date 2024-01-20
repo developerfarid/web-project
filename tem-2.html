@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pera Moy JIbon</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    
+      }
+      body {
+        font-family: "Helvetica Neue", sans-serif;
+      }
+      .header {
+        position: sticky !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        height: 100px;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 0px;
+
+      }
+      .container {
+        max-width: 1770px;
+        margin: auto;
+      }
+      
+      .badar {
+        background-color: rgba(0, 0, 0, 0.804);
+      }
+    
+      .header-image img {
+        font-size: 45px;
+      }
+      nav ul {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        text-transform: uppercase;
+      }
+      nav ul li a:hover {
+        color: rgb(51, 46, 62);
+        cursor: pointer;
+      }
+      .btn {
+        background-color: orange;
+        border: 1px solid bisque;
+
+        padding: 20px 50px;
+        font-size: 18px;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn:hover {
+        background-color: blueviolet;
+        cursor: pointer;
+      }
+
+      .project {
+        display: flex;
+        margin-bottom: 40px;
+        justify-content: center;
+        align-items: center;
+        height: 550px;
+        flex-direction: column;
+     
+      }
+      .project h1 {
+        font-size: 90px;
+        margin-bottom: 20px;
+        font-family: "Cormorant Garamond", serif;
+        color: white;
+      }
+      .project ul {
+        display: inline-block;
+        list-style: none;
+        padding: 15px;
+      }
+      .project ul li {
+        display: inline-block;
+      }
+      .project ul li a {
+        text-decoration: none;
+        font-size: 22px;
+      }
+      .image-wrap {
+        display: flex;
+        margin: auto;
+        padding: 20px;
+        flex-wrap: wrap;
+        row-gap:40px;
+
+      }
+      .only-image {
+        margin: auto;
+        width: 30%;
+        gap: 20px;
+      }
+
+      .only-image img {
+        width: 100%;
+        /* margin-bottom: 20px; */
+        transition: all 0.3s ease-in-out;
+        transform: scale(1.1);
+      }
+      .only-image p {
+        font-size: 18px;
+      }
+      .only-image h1 {
+        font-size: 34px;
+      }
+      .only-image h1:hover {
+        color: orange;
+        cursor: pointer;
+      }
+      .only-image:hover img {
+        transform: scale(1.5);
+        cursor: pointer;
+
+      }
+      .one {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .blank {
+        background-color: orange;
+      }
+      .one span {
+        border: 1px solid transparent;
+        font-size: 18px;
+        padding: 30px;
+        transition: all 0.3s ease-in-out;
+      }
+      .one span:hover {
+        background-color: orange;
+        cursor: pointer;
+      
+      }
+      .main {
+        display: flex;
+        background-color: orange;
+        margin-top: 50px;
+        padding: 80px;
+        gap: 60px;
+      }
+      .main1 {
+        font-size: 45px;
+      }
+      .main2 {
+        text-align: right;
+        margin: auto;
+       
+      }
+      .main2 button {
+        background-color: white;
+        border: 1px solid white;
+        font-size: 24px;
+        color: black;
+        padding: 25px 50px;
+        white-space: nowrap;
+      }
+      .last-one {
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 100%;
+        padding: 60px;
+      }
+      .last {
+        width: 18%;
+        margin: auto;
+        padding: 10px;  
+      }
+      .last ul li{
+        list-style: none;
+        font-size: 28px;
+      }
+      .last h1{
+        font-size: 54px;
+        margin-bottom: 10px;
+      }
+      .image-wrapper{
+        overflow: hidden;
+        margin-bottom: 25px;
+      }
+      .bg{
+  
+        position: relative;
+        background: url("https://htmldemo.net/taset/taset/assets/img/photos/bg2.webp") no-repeat center center;
+        background-size: cover;
+        z-index: 11;
+      }
+      .flex{
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        align-items: end;
+      }
+      .flex span{
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: block;
+        background-color: black;
+      }
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.733);
+    z-index: -1;
+
+}
+.image-wrapper{
+    position: relative;
+}
+.abs{
+    position: absolute;
+   bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%) translateY(50px);
+    z-index: 1111111111111111111111111111111;
+    background-color: black;
+    transition: all .3s ease-in-out;
+}
+.only-image:hover .abs{
+    transform: translateX(-50%) translateY(0px);
+
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="badar">
+          <div class="header">
+            <div class="header-image">
+              <img
+                src="https://htmldemo.net/taset/taset/assets/img/logo-light.webp"
+                alt=""
+              />
+            </div>
+            <nav>
+              <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">pages</a></li>
+                <li><a href="">content</a></li>
+              </ul>
+            </nav>
+            <button class="btn">Get A Quote</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="bg">
+        <div class="overlay"></div>
+      <div class="container">
+        <div class="project">
+          <h1>Blog post</h1>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">//</a></li>
+            <li><a href="">blogs</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="image-wrap">
+          <div class="only-image">
+            <div class="image-wrapper">
+                <img
+              src="https://htmldemo.net/taset/taset/assets/img/blog/3.webp"
+              alt=""
+            />
+            </div>
+
+            <p>By Walter Houston</p>
+            <br />
+            <h1>All of these amazing features come at an affordable price!</h1>
+            <p>
+              Lorem Ipsum is simply dummy text themes print industry orem psum
+              has been them industry spa also the loep into type setting.
+            </p>
+            <br />
+            <div class="flex">
+                <p>03 April, 2022</p> <span></span>
+                <p>03 April, 2022</p>
+            </div>
+         
+          </div>
+
+          <div class="only-image">
+            <div class="image-wrapper">
+            <img
+              src="https://htmldemo.net/taset/taset/assets/img/blog/3.webp"
+              alt=""
+            />
+            </div>
+
+            <p>By Walter Houston</p>
+            <br />
+            <h1>All of these amazing features come at an affordable price!</h1>
+            <p>
+              Lorem Ipsum is simply dummy text themes print industry orem psum
+              has been them industry spa also the loep into type setting.
+            </p>
+            <br />
+            <p>03 April, 2022</p>
+          </div>
+
+          <div class="only-image">
+            <div class="image-wrapper">
+            <img
+              src="https://htmldemo.net/taset/taset/assets/img/blog/3.webp"
+              alt=""
+            />
+            <div class="abs"><ul>
+                <li><a href="">Home</a></li>
+            </ul></div>
+            </div>
+
+            <p>By Walter Houston</p>
+            <br />
+            <h1>All of these amazing features come at an affordable price!</h1>
+            <p>
+              Lorem Ipsum is simply dummy text themes print industry orem psum
+              has been them industry spa also the loep into type setting.
+            </p>
+            <br />
+            <p>03 April, 2022</p>
+          </div>
+
+          <div class="only-image">
+            <div class="image-wrapper">
+            <img
+              src="https://htmldemo.net/taset/taset/assets/img/blog/3.webp"
+              alt=""
+            />
+            </div>
+
+            <p>By Walter Houston</p>
+            <br />
+            <h1>All of these amazing features come at an affordable price!</h1>
+            <p>
+              Lorem Ipsum is simply dummy text themes print industry orem psum
+              has been them industry spa also the loep into type setting.
+            </p>
+            <br />
+            <p>03 April, 2022</p>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="one">
+          <span class="blank">1</span>
+          <span>2 </span>
+          <span>3 </span>
+          <span>4</span>
+          <span</span>
+        </div>
+      </div>
+      
+    </section> 
+    <section>
+      <div class="container">
+        <div class="main">
+          <div class="main1">
+            <h1>
+              Make your store stand out from the converting
+            </h1>
+          </div>
+          <div class="main2">
+            <button>Subcribe Now >></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="last-one">
+          <div class="last">
+            <h1>All Service</h1>
+            <ul>
+              <li>About Market</li>
+              <li>Price And Planing</li>
+              <li>Droone Service</li>
+              <li>Contect Us</li>
+              <li>Facebook</li>
+            </ul>
+          </div>
+          <div class="last">
+            <h1>All Service</h1>
+            <ul>
+              <li>About Market</li>
+              <li>Price And Planing</li>
+              <li>Droone Service</li>
+              <li>Contect Us</li>
+              <li>Facebook</li>
+            </ul>
+          </div>
+          <div class="last">
+            <h1>All Service</h1>
+            <ul>
+              <li>About Market</li>
+              <li>Price And Planing</li>
+              <li>Droone Service</li>
+              <li>Contect Us</li>
+              <li>Facebook</li>
+            </ul>
+          </div>
+          <div class="last">
+            <h1>All Service</h1>
+            <ul>
+              <li>About Market</li>
+              <li>Price And Planing</li>
+              <li>Droone Service</li>
+              <li>Contect Us</li>
+              <li>Facebook</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
