@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 300px;
+        margin: auto;
+      }
+      .box {
+        position: relative;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: #05103b;
+        color: white;
+        z-index: 10;
+        overflow: hidden;
+        position: relative;
+        width: calc(100% + 3px);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 84% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 84% 100%, 0% 100%);
+      }
+      .box::before {
+        background-color: #fff;
+        border-radius: 2px;
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 4px;
+        top: 0;
+        width: 100%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 84% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 84% 100%, 0% 100%);
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        z-index: -1;
+      }
+      .box::after {
+        background-color: #05103b;
+        border-radius: 2px;
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 8px;
+        top: 0;
+        width: 100%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 84% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 84% 100%, 0% 100%);
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Hello</h2>
+    </div>
+  </body>
+</html>
